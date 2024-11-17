@@ -11,6 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <!-- <script src="https://unpkg.com/htmx.org/dist/htmx.js" defer></script> -->
     <script src="{% static 'js/htmx.min.js' %}" defer></script>
+    <!-- <script src="https://unpkg.com/hyperscript.org@0.9.13"></script> -->
+    <script src="{% static 'js/_hyperscript.min.js' %}"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         [x-cloak] { 
@@ -96,6 +98,14 @@
         .alert-success { @apply bg-green-400 }
         .alert-warning { @apply bg-amber-400 }
         .alert-danger { @apply bg-amber-500 }
+
+        @keyframes fadeInAndUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0px); }
+        }
+        .fade-in-up {
+            animation: fadeInAndUp 0.6s ease;
+        }
     </style>
 </head>
 
@@ -109,6 +119,11 @@
     {% block layout %}
         
     {% endblock layout %}
+        
+    
+    {% block javascript %}
+        
+    {% endblock javascript %}
         
 
 </body>
