@@ -25,12 +25,15 @@ SECRET_KEY = 'django-insecure-i-aqz$nz!(#0$4*zv624z^fmse0=+fp)+_p5muu1kq-pxohm54
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*','localhost','127.0.0.1', 'https://1272-2806-2f0-1100-f110-80c0-663e-6f00-a38b.ngrok-free.app']
+
+# CSRF_TRUSTED_ORIGINS = ['https://1272-2806-2f0-1100-f110-80c0-663e-6f00-a38b.ngrok-free.app']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'allauth',
@@ -77,7 +80,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+# WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = 'config.asgi.application'
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 
 # Database
