@@ -51,16 +51,16 @@ INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
-    'admin_honeypot',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    'admin_honeypot',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django_cleanup.apps.CleanupConfig',
     'django_htmx',
     'django_extensions',
@@ -124,7 +124,7 @@ if ENVIRONMENT == 'production' or POSTGRESS_LOCALLY == True:
         "default": {
             "BACKEND": "channels_redis.core.RedisChannelLayer",
             "CONFIG": {
-                "hosts": [('redis://default:tamalesverdes**@51.222.15.157:63791')],
+                "hosts": [(config('REDIS_URL'))],
             },
         },
     }
@@ -180,6 +180,12 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/ 'staticfiles'
 
 STATICFILES_DIRS = [ BASE_DIR / 'static', ]
+
+# Busca los archivos estaticos enum otras apps
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 MEDIA_URL = '/media/'
 
