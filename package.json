@@ -1,0 +1,20 @@
+{
+  "name": "chat-app-with-django-channels",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tailwindcss -i ./app/static/css/tailwind.css -o ./app/static/css/style.css --watch",
+    "tailwind": "tailwindcss -i ./app/static/css/tailwind.css -o ./app/static/css/style.css",
+    "minify": "cleancss ./app/static/css/style.css -o ./app/static/css/style.min.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "clean-css-cli": "^5.6.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}

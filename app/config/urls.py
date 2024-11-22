@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from a_home.views import home_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('backstage/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('a_rtchat.urls')),
     path('profile/', include('a_users.urls')),
