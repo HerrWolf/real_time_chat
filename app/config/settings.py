@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'django_cleanup.apps.CleanupConfig',
     'django_htmx',
     'django_extensions',
@@ -179,7 +181,7 @@ STATIC_ROOT = BASE_DIR/ 'staticfiles'
 
 STATICFILES_DIRS = [ BASE_DIR / 'static', ]
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 if ENVIRONMENT == 'production' or POSTGRESS_LOCALLY == True:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
