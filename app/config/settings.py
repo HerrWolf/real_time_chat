@@ -40,7 +40,8 @@ INTERNAL_IPS = [
     'localhost:8000',
 ]
 
-# CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='').split(',')
+if ENVIRONMENT == 'production':
+    CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='').split(',')
 
 
 # Application definition
