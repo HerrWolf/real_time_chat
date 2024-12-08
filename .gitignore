@@ -1,8 +1,10 @@
 venv/
+__venv/
 media/
 node/
 staticfiles/
 __pycache__/
+node_modules/
 .env
 .DS_Store
 .idea/
@@ -10,3 +12,5 @@ db.sqlite3
 *.sqlite3
 backup/
 db/sqlite/
+django_deployment.md
+_requirements.txt
