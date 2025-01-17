@@ -1,5 +1,4 @@
 venv/
-__venv/
 media/
 node/
 staticfiles/
